@@ -65,3 +65,21 @@ INSERT INTO rel_e_h (id_employee,id_hobby) VALUES (3,3)
 INSERT INTO rel_e_h (id_employee,id_hobby) VALUES (4,2)
 INSERT INTO rel_e_h (id_employee,id_hobby) VALUES (4,3)
 
+CREATE TABLE rel_e_b (
+id numeric(10) primary key identity(1,1),
+id_employee numeric(10),
+id_boss numeric(10)
+)
+
+ALTER TABLE rel_e_b
+ADD CONSTRAINT UC_e_b UNIQUE (id_employee)
+
+ALTER TABLE rel_e_b
+ADD FOREIGN KEY (id_employee) REFERENCES employee(id);
+ALTER TABLE rel_e_b
+ADD FOREIGN KEY (id_boss) REFERENCES employee(id);
+
+INSERT INTO rel_e_b (id_employee,id_boss) VALUES (1,2)
+INSERT INTO rel_e_b (id_employee,id_boss) VALUES (2,3)
+INSERT INTO rel_e_b (id_employee,id_boss) VALUES (3,4)
+INSERT INTO rel_e_b (id_employee,id_boss) VALUES (4,1)
