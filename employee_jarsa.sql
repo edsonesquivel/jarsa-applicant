@@ -38,3 +38,30 @@ INSERT INTO rel_e_d (id_employee,id_department) VALUES (1,1)
 INSERT INTO rel_e_d (id_employee,id_department) VALUES (2,2)
 INSERT INTO rel_e_d (id_employee,id_department) VALUES (3,2)
 INSERT INTO rel_e_d (id_employee,id_department) VALUES (4,3)
+
+CREATE TABLE employee_hobby(
+id numeric(10) primary key,
+name varchar(100) null,
+description varchar(100) null
+);
+
+INSERT INTO employee_hobby SELECT 1, 'DEPORTE', 'REALIZAR DEPORTE'
+INSERT INTO employee_hobby SELECT 2, 'LEER', 'LEER LIBROS DE FICCION'
+INSERT INTO employee_hobby SELECT 3, 'ROMPECABEZA', 'REALIZAR ROMPECABEZAS'
+
+CREATE TABLE rel_e_h (
+id numeric(10) primary key identity(1,1),
+id_employee numeric(10),
+id_hobby numeric(10)
+)
+
+ALTER TABLE rel_e_h
+ADD CONSTRAINT UC_e_h UNIQUE (id_employee,id_hobby)
+
+INSERT INTO rel_e_h (id_employee,id_hobby) VALUES (2,1)
+INSERT INTO rel_e_h (id_employee,id_hobby) VALUES (2,2)
+INSERT INTO rel_e_h (id_employee,id_hobby) VALUES (3,1)
+INSERT INTO rel_e_h (id_employee,id_hobby) VALUES (3,3)
+INSERT INTO rel_e_h (id_employee,id_hobby) VALUES (4,2)
+INSERT INTO rel_e_h (id_employee,id_hobby) VALUES (4,3)
+
