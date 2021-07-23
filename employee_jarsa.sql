@@ -1,8 +1,8 @@
---CREATE DATABASE employee_employee;
+CREATE DATABASE employee_employee
 USE employee_employee;
 
 CREATE TABLE employee(
-id numeric(10) primary key,
+id numeric  (10) primary key,
 first_name varchar(100) null,
 last_name varchar(100) null
 );
@@ -13,10 +13,10 @@ name varchar(100) null,
 description varchar(100) null
 );
 
-INSERT INTO employee SELECT 1, 'JUAN','PEREZ'
-INSERT INTO employee SELECT 2, 'ROBERTO','MARTINEZ'
-INSERT INTO employee SELECT 3, 'DAFNE','KEEN'
-INSERT INTO employee SELECT 4, 'ALICIA','VIKANDER'
+INSERT INTO employee SELECT 1, 'GABRIELA','RODRIGUEZ'
+INSERT INTO employee SELECT 2, 'JAIME','PADILLA'
+INSERT INTO employee SELECT 3, 'IAN','QUISTIAN'
+INSERT INTO employee SELECT 4, 'YADIRA','DOMINGUEZ'
 
 INSERT INTO employee_department SELECT 1, 'RH', 'DEPTO. RECURSOS HUMANOS'
 INSERT INTO employee_department SELECT 2, 'TI', 'DEPTO DE INFORMATICA'
@@ -39,14 +39,8 @@ INSERT INTO rel_e_d (id_employee,id_department) VALUES (2,2)
 INSERT INTO rel_e_d (id_employee,id_department) VALUES (3,2)
 INSERT INTO rel_e_d (id_employee,id_department) VALUES (4,3)
 
-CREATE TABLE employee_hobby(
-id numeric(10) primary key,
-name varchar(100) null,
-description varchar(100) null
-);
-
 INSERT INTO employee_hobby SELECT 1, 'DEPORTE', 'REALIZAR DEPORTE'
-INSERT INTO employee_hobby SELECT 2, 'LEER', 'LEER LIBROS DE FICCION'
+INSERT INTO employee_hobby SELECT 2, 'FOTOGRAFIA ', 'REALIZAR FOTOGRFIA'
 INSERT INTO employee_hobby SELECT 3, 'ROMPECABEZA', 'REALIZAR ROMPECABEZAS'
 
 CREATE TABLE rel_e_h (
